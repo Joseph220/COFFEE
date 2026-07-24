@@ -457,3 +457,103 @@ hr{
         padding: 8px 12px;
     }
 }
+
+/* Global enhancements */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Smooth, consistent transitions */
+*{
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+/* Increase spacing between sections (overrides where specific) */
+section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Increase paragraph line-height for readability */
+p{
+    line-height: 1.9;
+}
+
+/* Narrow the hero content area while keeping the background full-bleed */
+.hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Rounded images */
+img{
+    border-radius: 12px;
+}
+
+/* Navigation hover & subtle lift */
+nav a{
+    display: inline-block;
+    transition: color 0.22s ease, transform 0.22s ease;
+}
+nav a:hover{
+    transform: translateY(-4px);
+    color: #d88843;
+}
+
+/* Buttons: shadow, hover lift */
+.explore, .discover, .menu, .shop{
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+.explore:hover, .discover:hover, .menu:hover, .shop:hover{
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.45);
+}
+
+/* Cards: shadows, rounded images and hover state */
+.card1, .card2, .card3{
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+    background-color: #24201D;
+}
+.card1:hover, .card2:hover, .card3:hover{
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 22px 44px rgba(0,0,0,0.5);
+    background-color: #2b2723;
+}
+.card1 img, .card2 img, .card3 img{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Add small consistent text shadows to headings for depth */
+h1, h2, h3{
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}
+
+/* Tablet breakpoint: make cards wrap to two columns */
+@media (max-width: 1024px){
+    .hero h1{ font-size: 4rem; }
+    .specialcard{ flex-wrap: wrap; gap: 18px; }
+    .card1, .card2, .card3{ width: calc(50% - 12px); }
+    body{ padding-top: 100px; }
+}
+
+/* Phone breakpoint: stack cards and simplify spacing */
+@media (max-width: 768px){
+    .hero h1{ font-size: 2.8rem; }
+    .about, .special, .offer, .features{ padding: 30px 20px; }
+    .card1, .card2, .card3{ width: 100%; }
+    .specialcard{ flex-direction: column; }
+    body{ padding-top: 90px; }
+    nav ul{ gap: 12px; }
+}
+
+/* Smaller phones */
+@media (max-width: 480px){
+    header{ padding: 10px 14px; }
+    .hero{ padding-left: 18px; padding-right: 18px; }
+    h1{ font-size: 2.2rem; }
+    .explore, .discover, .menu, .shop{ padding: 8px 10px; }
+}
