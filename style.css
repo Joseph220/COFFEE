@@ -481,11 +481,10 @@ p{
 
 /* Narrow the hero content area while keeping the background full-bleed */
 .hero{
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: flex-start;
-    padding-left: 60px;
-    padding-right: 60px;
+    height: 80vh;
+    /* keep full-bleed background; restore original padding/alignment */
+    align-items: center;
+    padding: 40px;
 }
 
 /* Rounded images */
