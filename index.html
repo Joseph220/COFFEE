@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header>
@@ -21,14 +22,15 @@
                 <li><a href="#Special">Special Offers</a></li>
             </ul>
         </nav>
+        <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
     </header>
     <main>
-        <section id="home" class="hero">
+        <section class="hero" id="home">
             <h1>Good Coffee<span class="better">Better Days</span></h1>
             <p>Crafted with passion, brewed for you.<span class="start">Start your day the right way.</span></p>
             <button class="explore">Explore Menu</button>       
         </section>
-        <section id="story" class="about">
+        <section class="about" id="story">
            <div class="about-content">
              <h5>OUR STORY</h5>
 
@@ -52,7 +54,7 @@
                         </div>
             </div>
        </section>
-    <section id="offers" class="special">
+       <section class="special" id="offers">
         <div class="specials">
             <h5 class="ourSpecial">OUR SPECIAL</h5>
             <h2 class="sips">Sips Worth <br>Savoring.</h2>
@@ -62,25 +64,31 @@
         <div class="specialcard">
             <div  class="card1">
                 <img src="cappuccino.png" alt="Cappucino">
-                <h3 class="capp">Cappuccino</h3>
-                <p class="cappu">Smooth, rich & perfectly balanced.</p>
-                <h3>$3.50</h3>
+                <div class="card-content">
+                    <h3 class="capp">Cappuccino</h3>
+                    <p class="cappu">Smooth, rich & perfectly balanced.</p>
+                    <h3>$3.50</h3>
+                </div>
             </div>
              <div  class="card2">
                 <img src="latte.png" alt="Latte">
-                <h3 class="latt"> Caramel Latte</h3>
-                <p class="latte">sweet, Creamy & Irresistible.</p>
-                <h3>$4.00</h3>
+                <div class="card-content">
+                    <h3 class="capp"> Caramel Latte</h3>
+                    <p class="cappu">sweet, Creamy & Irresistible.</p>
+                    <h3>$4.00</h3>
+                </div>
             </div>
              <div  class="card3">
                 <img src="americano.png" alt="Americano">
-                <h3 class="americ">Iced Americano</h3>
-                <p class="americano">Bold, clean & perfectly balanced.</p>
-                <h3>$3.75</h3>
+                <div class="card-content">
+                    <h3 class="capp">Iced Americano</h3>
+                    <p class="cappu">Bold, clean & perfectly balanced.</p>
+                    <h3>$3.75</h3>
+                </div>
             </div>
         </div>
        </section>
-    <section id="Special" class="offer">
+       <section class="offer" id="Special">
         <div class="offer-content">
             <h5 class="specialoffers">SPECIAL OFFERS</h5>
             <h2 class="offers">20% off <br> <span class="discount">your first order.</span></h2>
@@ -116,5 +124,24 @@
 
 </section>
     </main>
+
+
+<script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+    const icon = document.querySelector(".menu-toggle i");
+    
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    
+        if (nav.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+    });
+</script>
 </body>
 </html>
